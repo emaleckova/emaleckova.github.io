@@ -13,4 +13,4 @@ links:
 
 **Hello!**
 
-I am a trained biologist (yes, I know how pipetting goes and what is usual composition of a PCR  reaction) who developed an interest into genomics early on. Any kind of "-omics" goes hand in hand with big data, data analysis and visualization. Here it was - my new passion and further career developments until my current role of a *Scientific Associate* at Resolve Biosciences (Monheim, Germany).
+I am a trained biologist (yes, I know how pipetting goes and what is usual composition of a PCR  reaction) who developed an interest into genomics early on. Any kind of "-omics" goes hand in hand with big data, data analyses and visualisations. Here it was - my new passion and further career developments until my current role of a *Scientific Associate* at Resolve Biosciences (Monheim, Germany).
