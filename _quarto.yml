@@ -3,18 +3,19 @@ project:
   output-dir: docs
 
 website:
-  title: "emaleckova.github.io"
+  title: "Eva Malečková"
   navbar:
     left:
       - href: index.qmd
         text: Home
       - about.qmd
+      - education.qmd
 
 format:
   html:
-    theme: cosmo
+    theme:
+      light: minty
+      dark: solar
     css: styles.css
-    toc: true
-
-
-
+    toc: false
+    page-layout: full
