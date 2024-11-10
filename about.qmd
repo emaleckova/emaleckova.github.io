@@ -1,9 +1,56 @@
 ---
-title: "About"
+toc-title: "About"
+toc: true
 ---
 
-About this site
+# Career
 
-```{r}
-1 + 1
-```
+June 2023 - now **Resolve BioSciences** (Germany)  
+*Scientific Associate*  
+- focus on data analysis (tools: R, Quarto, Git, snakemake)  
+
+Oct 2021 - Apr 2023 **Singleron Biotechnologies** (Germany)  
+*R & D Scientist*  
+- wet lab: proprietary single-cell sequencing worfklow, generation of NGS libraries  
+- bioinformatics: analysis of single-cell sequencing data from QC to cell type identification and annotation  
+
+Sep 2020 - Sep 2021 **Heinrich Heine University Düsseldorf** (Germany)  
+*Postdoctoral researcher*  
+- project on lichen metagenomics  
+- wet lab: genomic DNA isolation, development and use of PCR-based markers, cloning  
+- bioinformatics: comparative analysis of marker DNA sequences  
+
+## Other activities
+
+2020 - 2022 *Assistant Feature Editor* for the *Plant Physiology* journal  
+
+
+---------------
+
+# Education
+
+2016 - 2020 **Heinrich Heine University Düsseldorf** (Germany)  
+*PhD* in Biology  
+- graduation thesis on *Regulation of Crassulacean Acid Metabolism (CAM) in the Facultative CAM Species Talinum triangulare*  
+
+2013 - 2016 **Palacký University in Olomouc** (Czech Republic)  
+*Master's degree* in Molecular and Cell Biology  
+- graduation thesis on *Molecular Characterization of Fungal Pathogen Blumeria graminis and Development of Suitable Markers*  
+
+2010 - 2013 **Palacký University in Olomouc** (Czech Republic)  
+*Bachelor's degree* in Molecular and Cell Biology  
+- graduation thesis on *Involvement of Photoreceptors and Ion Channels in Tomato Seed Germination*  
+
+## Internships
+
+summer 2015 **North Carolina State University** (Department of Molecular and Structural Biochemistry,group of Coleen Doherty)  
+
+summer 2014 **Institute of Experimental Botany** (Olomouc, Czech Republic)  
+
+summer 2013 **Swedish University of Agricultural Sciences** (group of Claudia Köhler)  
+
+summer 2012 **Vienna Biocenter Summer School** - associated with Claudia Jonak's group, Gregor Mendel Institute of Molecular Plant Physiology  
+
+---------
+
+# Publications
