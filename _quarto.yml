@@ -26,6 +26,9 @@ website:
       - icon: envelope
         aria-label: email
         href: "mailto:maleckova.eva@seznam.cz" 
+  page-footer:
+    left:  © 2024 Eva Malečková
+    right: Created with [**Quarto**](https://quarto.org/){target=_blank} and [{{< fa brands r-project title="R Project" >}}](https://www.r-project.org/about.html){target=_blank}
 # Visuals
 format:
   html:
@@ -46,7 +49,3 @@ execute:
   echo: false
   warning: false
   error: false
-
-page-footer: 
-  left:  © 2024 Eva Malečková
-  right: Created with [Quarto](https://quarto.org/){target=_blank} and [{{< fa brands r-project title="R Project" >}}](https://www.r-project.org/about.html){target=_blank}
