@@ -2,20 +2,50 @@ project:
   type: website
   output-dir: docs
 
+# General website settings
 website:
   title: "Eva Malečková"
+  description: "Biologist by training (Molecular and Cell Biology) who found a way to (big) data analysis, data vizualization and Quarto which is currently my biggest passion"
+  image: ""
+  # Navigation
   navbar:
+    pinned: true
     left:
       - href: index.qmd
         text: Home
-      - href: about.qmd
-        text: About
-
+      - href: Experience/index.qmd
+        text: Experience
+      - href: Hobbies/index.qmd
+        text: Hobbies
+    # social media handles
+    right:
+      - icon: github
+        href: https://github.com/emaleckova
+      - icon: linkedin
+        href: https://linkedin.com/in/evamaleckova
+      - icon: envelope
+        aria-label: email
+        href: "mailto:maleckova.eva@seznam.cz" 
+# Visuals
 format:
   html:
     theme:
-      light: minty
-      dark: solar
-    css: styles.css
+      light: [minty, _visuals/styles.scss]
+      dark: [solar, _visuals/styles.scss]
+    # fonts
+    css:
+      - _visuals/css/news-cycle.css
     toc: false
     page-layout: full
+    anchor-sections: true
+    footnotes-hover: true
+
+# Additional features
+execute: 
+  echo: false
+  warning: false
+  error: false
+
+page-footer: 
+  left:  © 2024 Eva Malečková
+  right: Created with [Quarto](https://quarto.org/){target=_blank} and [{{< fa brands r-project title="R Project" >}}](https://www.r-project.org/about.html){target=_blank}
