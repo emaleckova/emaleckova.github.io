@@ -29,6 +29,7 @@ website:
 # Visuals
 format:
   html:
+    embed-resources: true
     theme:
       light: [minty, _visuals/styles.scss]
       dark: [solar, _visuals/styles.scss]
