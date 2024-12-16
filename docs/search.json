@@ -4,13 +4,48 @@
     "href": "index.html",
     "title": "Eva Malečková",
     "section": "",
-    "text": "Hello!\nI am a trained biologist (yes, I know how pipetting goes and what is usual composition of a PCR reaction) who developed an interest into genomics early on. Any kind of “-omics” goes hand in hand with big data, data analysis and visualization. Here it was - my new passion and further career developments until my current role of a Scientific Associate at Resolve Biosciences (Monheim, Germany)."
+    "text": "Hello and welcome!\nI am a trained biologist (yes, I know how pipetting goes and what is the usual composition of a PCR reaction) who developed an interest into genomics early on. Any kind of “-omics” goes hand in hand with big data, data analyses and visualisations. Here it was - my new passion and further career developments until my current role of a Scientific Associate at Resolve Biosciences (Monheim, Germany)."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "Experience/index.html",
+    "href": "Experience/index.html",
+    "title": " Work experience",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "June 2023 - now Resolve BioSciences (Germany)\nScientific Associate\n- data analysis for internal purposes - data quality assessment, reporting tools and report templates\n- tools: R, Quarto, GitHub, snakemake\nOct 2021 - Apr 2023 Singleron Biotechnologies (Germany)\nR & D Scientist\n- wet lab: proprietary single-cell sequencing worfklow, generation of NGS libraries\n- bioinformatics: analysis of single-cell sequencing data from QC to cell type identification and annotation\n- contribution to two application notes\nSep 2020 - Sep 2021 Heinrich Heine University Düsseldorf (Germany)\nPostdoctoral researcher\n- project on lichen metagenomics\n- wet lab: genomic DNA isolation, development and use of PCR-based markers, cloning\n- bioinformatics: comparative analysis of marker DNA sequences\n\n\n2020 - 2022 Assistant Feature Editor for the Plant Physiology journal\n\n\n\nsummer 2015 North Carolina State University (Department of Molecular and Structural Biochemistry,group of Coleen Doherty)\nsummer 2014 Institute of Experimental Botany (Olomouc, Czech Republic)\nsummer 2013 Swedish University of Agricultural Sciences (group of Claudia Köhler)\nsummer 2012 Vienna Biocenter Summer School - associated with Claudia Jonak’s group, Gregor Mendel Institute of Molecular Plant Physiology"
+  },
+  {
+    "objectID": "Experience/index.html#other-activities",
+    "href": "Experience/index.html#other-activities",
+    "title": " Work experience",
+    "section": "",
+    "text": "2020 - 2022 Assistant Feature Editor for the Plant Physiology journal"
+  },
+  {
+    "objectID": "Experience/index.html#internships",
+    "href": "Experience/index.html#internships",
+    "title": " Work experience",
+    "section": "",
+    "text": "summer 2015 North Carolina State University (Department of Molecular and Structural Biochemistry,group of Coleen Doherty)\nsummer 2014 Institute of Experimental Botany (Olomouc, Czech Republic)\nsummer 2013 Swedish University of Agricultural Sciences (group of Claudia Köhler)\nsummer 2012 Vienna Biocenter Summer School - associated with Claudia Jonak’s group, Gregor Mendel Institute of Molecular Plant Physiology"
+  },
+  {
+    "objectID": "Hobbies/index.html",
+    "href": "Hobbies/index.html",
+    "title": "Eva Malečková",
+    "section": "",
+    "text": "I am balancing out the data-and-ggplot2-me among others with running and bread baking."
+  },
+  {
+    "objectID": "Hobbies/index.html#running",
+    "href": "Hobbies/index.html#running",
+    "title": "Eva Malečková",
+    "section": " Running",
+    "text": "Running\n\nYou can’t climb up to the second floor without a ladder. When you set your aim too high and don’t fulfill it, then your enthusiasm turns to bitterness. Try for a goal that’s reasonable, and then gradually raise it.\nEmil Zátopek\n\nRunning brings so many learnings - from goal settings to working towards them, it trains not only the physical skills but also endurance and patience. It is a process and an enjoyable way.\nThe science of running is no less interesting. We - humans - have basically evolved to run. The adaptation on the foot include longitudinal arch and the Achilles tendon which help with energy storage and release while running. An anatomical structure unique to humans is the nuchal ligament which prevents heads from tipping forward.\nWe differentiate from animals in our ability to maintain moderate speeds for long durations. A key adaptation in this regard is our sweating ability which is much more efficient than thermoregulation of most animals relying on panting. These adaptations make us to endurance runners."
+  },
+  {
+    "objectID": "Hobbies/index.html#bread-backing",
+    "href": "Hobbies/index.html#bread-backing",
+    "title": "Eva Malečková",
+    "section": " Bread backing",
+    "text": "Bread backing\n\n\n\n\n\n\n\n\n\nSourdough bread baking is another “never ending” project but equally rewarding as running. :-) Besides that, a fresh bread is my most favourite fuel before and recovery after run.\nThere is such a variety of flours, so many options how to set the oven and the sourdough starter evolves and has its moods. This makes every loaf of bread unique and bread baking to constant learning.\n\n\n\nMy favourite recipe is as follows.\n\nIngredients\n100 g sourdough starter (made with rye flour)\n200 g rye flour\n200 g wheat flour\nabout 350 g lukewarm water\n18 g salt\noptionally bread spices\nSteps\n\nMix sourdought starter with both flour types and add water.\n\nLet rust covered (I use a kitchen towel) for about an hour.\n\nAdd salt and if you want, bread spices.\n\nMix and let rest overnight.\n\nTransfer the dough to a proofing basket and let rest covered for an additional hour.\n\nBake in an oven preheated to 240°C for 15 minutes and for additional about 40 minutes at 180°C.\n\nMy favourite bread spices is made of equal amounts of caraway, anise, fennel and coriander seeds. I grind all the seeds before mixing but like to keep half of the caraway seeds intact.\n\n\nFurther reading:\nNational Geographic Book Talk: We Evolved to Run—But We’re Doing It All Wrong"
   }
 ]
