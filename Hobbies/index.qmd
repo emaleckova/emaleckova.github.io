@@ -1,0 +1,65 @@
+---
+toc-title: "Hobbies"
+toc: true
+toc-depth: 2
+---
+
+I am balancing out the data-and-ggplot2-me among others with running and bread baking.
+
+## {{< fa person-running >}} Running
+
+> You can't climb up to the second floor without a ladder. When you set your aim too high and don't fulfill it, then your enthusiasm turns to bitterness. Try for a goal that's reasonable, and then gradually raise it.  
+*Emil Zátopek*
+
+Running brings so many learnings - from goal settings to working towards them, it trains not only the physical skills but also endurance and patience. It is a process and an enjoyable way.
+
+The science of running is no less interesting. We - humans - have basically evolved to run. The adaptation on the foot include  longitudinal arch and the Achilles tendon which help with energy storage and release while running. An anatomical structure unique to humans is the nuchal ligament which prevents heads from tipping forward.
+
+We differentiate from animals in our ability to maintain moderate speeds for long durations. A key adaptation in this regard is our sweating ability which is much more efficient than thermoregulation of most animals relying on panting. These adaptations make us to **endurance runners**.
+
+
+## {{< fa bread-slice >}} Bread backing
+
+::::{#bread layout-ncol=2}
+
+:::{#bread-img}
+![](../_attachments/Bread.png){width=400px}
+:::
+
+:::{#bread-text}
+
+Sourdough bread baking is another "never ending" project but equally rewarding as running. :-) Besides that, a fresh bread is my most favourite fuel before and recovery after run. 
+
+There is such a variety of flours, so many options how to set the oven and the sourdough starter evolves and has its moods. This makes every loaf of bread unique and bread baking to constant learning.
+:::
+::::
+
+My favourite recipe is as follows.
+
+:::{#recipe class="text-box"}
+
+**Ingredients**  
+
+100 g sourdough starter (made with rye flour)  
+200 g rye flour  
+200 g wheat flour  
+about 350 g lukewarm water  
+18 g salt  
+optionally bread spices
+
+**Steps**  
+
+1. Mix sourdought starter with both flour types and add water.  
+2. Let rust covered (I use a kitchen towel) for about an hour.  
+3. Add salt and if you want, bread spices.  
+4. Mix and let rest overnight.  
+5. Transfer the dough to a proofing basket and let rest covered for an additional hour.  
+6. Bake in an oven preheated to 240°C for 15 minutes and for additional about 40 minutes at 180°C.  
+
+**My favourite bread spices** is made of equal amounts of caraway, anise, fennel and coriander seeds. I grind all the seeds before mixing but like to keep half of the caraway seeds intact.  
+:::
+
+------------------------------------------------------------------
+
+**Further reading:**  
+[National Geographic Book Talk: We Evolved to Run—But We're Doing It All Wrong](https://www.nationalgeographic.com/science/article/running-books-jogging-health-science)
