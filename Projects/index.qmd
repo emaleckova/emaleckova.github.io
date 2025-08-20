@@ -1,0 +1,21 @@
+---
+toc-title: "Fun projects"
+toc: true
+toc-depth: 2
+---
+
+# {{< fa bars-progress >}} Overview of fun projects
+
+## Quarto
+
+- [Paris 2024 Olympics dashboard](https://emaleckova.github.io/paris-2024-medals/Dashboard_main.html)
+{{< video ../_attachments/Dashboard_sneakpeek.mp4 >}}
+
+- [Scrollytelling about Baron F. Trenck](https://emaleckova.quarto.pub/baron-trencks-unraveled-secrets/)
+
+
+## DataViz
+- {{< fa brands github >}} [`#30DayChartChallenge` contributions](https://github.com/emaleckova/30-day-challenges)
+- {{< fa brands github >}} [`#TidyTuesday` contributions](https://github.com/emaleckova/tidytuesday)
+
+
