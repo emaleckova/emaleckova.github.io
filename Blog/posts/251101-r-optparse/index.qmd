@@ -416,4 +416,4 @@ Rscript PlotCars.R -x "mpg" -y "wt" --x-title "Miles per gallon" --y-title "Weig
 -n "mpg_vs_wt" -f "png"
 ```
 
-![ggplot_output]("Blog/posts/251101-r-optparse/mpg_vs_wt.png")
+![ggplot_output](Blog/posts/251101-r-optparse/mpg_vs_wt.png)
