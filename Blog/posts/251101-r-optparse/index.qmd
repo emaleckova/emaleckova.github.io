@@ -1,0 +1,27 @@
+---
+title: "Argument parsing for `R` scripts with `{optparse}`"
+author: "Eva Malečková"
+date: "2025-11-01"
+date-modified: last-modified
+categories: [R]
+image: ""
+draft: true
+---
+
+## Motivation
+
+Every now and then I wondered whether it is possible to run `R` scripts in Python style - from command line with additional arguments. I knew of the `Rscript` command but as for the arguments part, I always that this would not be possibly or only with lots of difficulties. It turns out I could not be more wrong. The [`{optparse}`](https://github.com/trevorld/r-optparse) package impressed me so much that I decided to write a blog (my first ever!) about it.
+
+## `{optparse}`
+
+### About
+
+It is a [CRAN package]() also available [from GitHub](https://github.com/trevorld/r-optparse). It is not the only option for `R` users and apparently the `{argparse}` has some options. However, it comes at cost of more dependencies, including Python. Since the project I am currently working on has become quite complex and I am trying to keep the tech stack limited (mainly because of deplyoment reasons), I opted for `{optparse}`. It did not disappoint! The usage is very straightforward but still with quite some customization options - for example, a user-defined character in place for the option argument, which is a nice detail for the help page.
+
+While the README on GitHub is good enough to get first functional parser within minutes, I decided to provide a more detailed example use case in this post.
+
+### A toy script
+
+We will start by creating a small script. Since I spend most of my time with `{ggplot2}`, it will be a code to create a figure based on the famous `mtcars` dataset.
+
+### A parser

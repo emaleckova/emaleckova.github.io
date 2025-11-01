@@ -17,6 +17,8 @@ website:
         text: Experience
       - href: Projects/index.qmd
         text: Fun projects
+      - href: Blog/index.qmd
+        text: Blog
       - href: Hobbies/index.qmd
         text: Hobbies
     # social media handles
