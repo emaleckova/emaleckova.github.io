@@ -1,10 +1,16 @@
 ---
 title: "Argument parsing for `R` scripts with `{optparse}`"
 author: "Eva Malečková"
-date: "2025-11-01"
+date: "2025-11-02"
 date-modified: last-modified
 categories: [R]
-image: ""
+image: "Blog/posts/251101-r-optparse/Blog_screenshot.jpg"
+
+fig-width: 4
+
+echo: true
+code-overflow: wrap
+
 draft: true
 ---
 
@@ -22,6 +28,392 @@ While the README on GitHub is good enough to get first functional parser within 
 
 ### A toy script
 
-We will start by creating a small script. Since I spend most of my time with `{ggplot2}`, it will be a code to create a figure based on the famous `mtcars` dataset.
+We will start by creating a small script. Since I spend most of my time with `{ggplot2}`, it will be a code to create a simple dot plot with `mtcars` dataset, one of the basic and well-known R datasets (comes from `{datasets}` package).
 
-### A parser
+After getting input data
+
+```{r}
+cars_dat <- mtcars
+```
+
+
+we can create the simplest version of a ggplot2 code, where all values are hard-coded (such as the variables on *x* and *y* axes) or we rely on defaults (axis titles).
+
+```{r}
+library(ggplot2)
+
+ggplot(cars_dat, aes(x = mpg, y = hp)) +
+  geom_point(shape = 21, colour = "white", fill = "#26677FFF", size = 3.5, alpha = 0.75, stroke = 1.5) +
+  theme_classic() +
+  theme(axis.text = element_text(face = "bold"),
+        axis.title = element_text(face = "bold"),
+        aspect.ratio = 1)
+```
+
+
+### Some flexibility with variables
+
+However, we can easily pass values stored in variables as in the examples with *x* and *y* variables below:
+
+```{r}
+x_var <- "mpg"
+y_var <- "hp"
+
+ggplot(cars_dat, aes(x = !!sym(x_var), y = !!sym(y_var))) +
+  geom_point(shape = 21, colour = "white", fill = "#26677FFF", size = 3.5, alpha = 0.75, stroke = 1.5) +
+  theme_classic() +
+  theme(axis.text = element_text(face = "bold"),
+        axis.title = element_text(face = "bold"),
+        aspect.ratio = 1)
+```
+
+:::{.callout-tip}
+
+## Passing variables namse with `sym()`
+
+`{ggplot2}` is known to many and thus a good toy example. However, passing variables to `aes()` is a bit tricky. The `aes()` function expects symbols - *i.e.* unquoted variables (column names). We use `sym()` to convert character to a symbol which `{ggplo2}` can understand. It work in combination with Bang-Bang operator `!!` ("unquote"), which tells `R` to evaluate the expression.
+
+:::
+
+
+### A parser example
+
+Above, we passed variables to `x` and `y` in the `aes()` call, but the underlying values are still part of the code. If we want to plot relationship between another pair of variables, we still need to modify the actual code which as not as flexible as providing arguments from the command line, especially we want to share the script with others, who may not be so confident with programming. Here, comes the `{optparse}` package in play.
+
+With the package loaded,
+
+```{r}
+library(optparse)
+```
+
+only four steps are needed to make our script ready to accept options/arguments from command line:  
+
+  1. Create parsesr with `OptionParser`  
+  2. Specify its options with one or more `add_option()` function calls  
+  3. Access the specified options with `parse_args()`  
+  4. Use the options/arguments in code as needed with `$` operator  
+
+
+A minimum functional example of the above four points follows:
+
+```{r}
+#| eval: false
+
+# 1. Create parser
+# ----------------
+opt_parser <- OptionParser()
+
+# 2. Specify options
+# ------------------
+opt_parser <- add_option(opt_parser, c("-v", "--verbose"), action="store_true",
+                     default=TRUE, help="Print extra output [default]")
+opt_parser <- add_option(opt_parser, c("-q", "--quietly"), action="store_false",
+                     dest="verbose", help="Print little output")
+opt_parser <- add_option(opt_parser, c("--x-variable"), type="character")
+opt_parser <- add_option(opt_parser, c("--y-variable"), type="character")
+
+# 3. Get options
+# --------------
+opts = parse_args(opt_parser)
+
+
+# 4. Apply options in the ggplot call
+# ------------------------------------------------------------------------------
+
+xvar <- sym(opts$`x-variable`)
+print(paste("x-axis variable:", xvar))
+
+yvar <- sym(opts$`y-variable`)
+print(paste("y-axis variable:", yvar))
+
+ggplot(cars_dat, aes(x = !!xvar, y = !!yvar)) +
+  geom_point(shape = 21, colour = "white", fill = "#26677FFF", size = 3.5, alpha = 0.75, stroke = 1.5) +
+  theme_classic() +
+  theme(axis.text = element_text(face = "bold"),
+        axis.title = element_text(face = "bold"),
+        aspect.ratio = 1)
+```
+
+
+### Customization options
+
+Let's start by providing more details about the script to the user (will be siplayed with `-h` or `--help` tag, during development, we can use `optparse::print_help()`). Besides program name we wish to be displayed in help, we can provide example usage command and secription:  
+
+```{r}
+opt_parser <- OptionParser(
+  usage = "Usage: Rscript -e %prog [options]",
+  prog = "PlotCars.R",
+  description = "Creates a dot plot of `mtcars` dataset based on user-provided arguments",
+  epilogue = "Fingers crossed for a nice plot"
+)
+```
+
+
+We can obviously not only expand the options user can provide, but we can also set default values and decide to store the user-provided value in the short flag of a given argument for easier access in the code.
+
+Each option **must** have a long version of flag (*e.g.*, `--verbose` above or `--x-variable` in one of the newly added options). We can provide a hort version as well (*e.g.*, `-v` or `-x`). With that, we (our target audience) have less typing to do when running the script from command line. Another benefit is that we can use the short flag to access the option's values in our code. To do so, we have to set the `dest` parameter of `add_function()` to the short tag. With that we can access the value with *e.g.* `x` instead of `x-variable`, which would moreover require wrapping it in `\``\` because of `-` in the long tag.
+
+`metavar` is a handy argument for a bit more customization and potentially more guidience on the individual options.
+
+Without a `metavar` argument, long flag is used by default in help. For this code
+
+```{r}
+#| eval: false
+
+add_option(opt_parser, c("-f", "--format"), type="character", default = "pdf",
+                         help="Export format for the plot: png, jpeg or pdf; defaults to pdf",
+                         dest = "f")
+```
+
+
+the help looks like this:  
+
+```
+	-f FORMAT, --format=FORMAT
+		Export format for the plot: png, jpeg or pdf; defaults to pdf
+```
+
+We can provide additional detail about the expected input *e.g.* with `metavar="file extension"`. Specifying an otpion as below
+
+```{r}
+#| eval: false
+
+add_option(opt_parser, c("-f", "--format"), type="character", default = "pdf",
+                         help="Export format for the plot: png, jpeg or pdf; defaults to pdf",
+                         dest = "f",
+                         metavar="file extension")
+```
+
+will results in such help description:
+
+```
+	-f FILE EXTENSION, --format=FILE EXTENSION
+		Export format for the plot: png, jpeg or pdf; defaults to pdf`
+```
+
+In the command-line version of our little` R` script, we will give user the following options:  
+
+  - variables to be plotted on *x* and *y* axis  
+  - custom axis titles  
+  - custom basename of the exported file
+  - and format to export into  
+
+```{r}
+opt_parser <- add_option(opt_parser, c("-x", "--x-variable"), type="character",
+                     help="Variable on x-axis, one of 'mpg', 'cyl', 'disp', 'hp',
+                     'drat', 'wt', 'qsec', 'vs', 'am', 'gear', 'carb'",
+                     dest = "x",
+                     metavar="x variable")
+opt_parser <- add_option(opt_parser, c("-y", "--y-variable"), type="character",
+                         help="Variable on y-axis, one of 'mpg', 'cyl', 'disp', 'hp',
+                     'drat', 'wt', 'qsec', 'vs', 'am', 'gear', 'carb'",
+                     dest = "y",
+                     metavar="y variable")
+opt_parser <- add_option(opt_parser, c("--x-title"), type="character",
+                         help="Custom title of the x-axis",
+                     metavar="axis title")
+opt_parser <- add_option(opt_parser, c("--y-title"), type="character",
+                         help="Custom title of the y-axis",
+                         metavar="axis title")
+opt_parser <- add_option(opt_parser, c("-n", "--name"), type="character",
+                         help="File basename",
+                         dest = "n",
+                         metavar="name")
+opt_parser <- add_option(opt_parser, c("-f", "--format"), type="character", default = "pdf",
+                         help="Export format for the plot: png, jpeg or pdf; defaults to pdf",
+                         dest = "f",
+                         metavar="file extension")
+```
+
+
+We can display the help for our script with `optparse::print_help(opt_parser)`
+
+```
+Usage: Rscript -e PlotCars.R [options]
+Creates a dot plot of `mtcars` dataset based on user-provided arguments
+
+Options:
+	-h, --help
+		Show this help message and exit
+
+	-v, --verbose
+		Print extra output [default]
+
+	-q, --quietly
+		Print little output
+
+	-x X VARIABLE, --x-variable=X VARIABLE
+		Variable on x-axis, one of 'mpg', 'cyl', 'disp', 'hp',
+                     'drat', 'wt', 'qsec', 'vs', 'am', 'gear', 'carb'
+
+	-y Y VARIABLE, --y-variable=Y VARIABLE
+		Variable on y-axis, one of 'mpg', 'cyl', 'disp', 'hp',
+                     'drat', 'wt', 'qsec', 'vs', 'am', 'gear', 'carb'
+
+	--x-title=AXIS TITLE
+		Custom title of the x-axis
+
+	--y-title=AXIS TITLE
+		Custom title of the y-axis
+
+	-n NAME, --name=NAME
+		File basename
+
+	-f FILE EXTENSION, --format=FILE EXTENSION
+		Export format for the plot: png, jpeg or pdf; defaults to pdf
+
+Fingers crossed for a nice plot
+
+```
+
+This comes close to Python-style program help pages and easy to read. It should be an easy task for the target user to run the code.
+
+However, we need to ensure code functionality by accessing the options correctly first! This is how the small ggplot code can be transformed:
+
+```{r}
+#| eval: false
+
+xvar <- sym(opts$x)
+print(paste("x-axis variable:", xvar))
+
+yvar <- sym(opts$y)
+print(paste("y-axis variable:", xvar))
+
+p <- ggplot(cars_dat, aes(x = !!xvar, y = !!yvar)) +
+  geom_point(shape = 21, colour = "white", fill = "#26677FFF", size = 3.5, alpha = 0.75, stroke = 1.5) +
+  labs(x = opts$`x-title`,
+       y = opts$`y-title`) +
+  theme_classic() +
+  theme(axis.text = element_text(face = "bold"),
+        axis.title = element_text(face = "bold"),
+        aspect.ratio = 1)
+```
+
+
+In addition, we added few lines of code to control the export of generated figures. For demonstaration purpose, the allowed output formats are limited to PNG, JPEG and PDF only, which we need to handle accordingly and give user a warning message if some other format would be selected.
+
+```{r}
+#| eval: false
+
+if(!opts$f %in% c("png", "jpeg", "pdf")){
+  print("ERROR: Figures can be exported into PNG, JPEG or PDF only!")
+}else{
+  ggsave(filename = paste0(opts$n, ".", opts$f), device = opts$f)
+}
+```
+
+
+### Required options
+
+By default, all options are optional, which does not bother are so much in case of axis titles or export options. If missing, the default behaviour will not break execution of the code and will result in decent outcomes - namely, axis titles being set to variables names as in the input data, Rplot as a file's basename and export to PDF.
+
+However, if the user does not provide *x* and *y* variables, we will leave them with the beloe error message and wondering what happended.
+
+```
+Error in `sym()`:
+! Can't convert `NULL` to a symbol.
+Backtrace:
+    ▆
+ 1. └─rlang::sym(opts$x)
+ 2.   └─rlang:::abort_coercion(x, "a symbol")
+ 3.     └─rlang::abort(msg, call = call)
+Execution halted
+```
+
+Explicitly specifying required arguments in the help is a good starting point - *e.g.*:
+
+```{r}
+opt_parser <- add_option(opt_parser, c("-x", "--x-variable"), type="character",
+                     help="REQUIRED: Variable on x-axis, one of 'mpg', 'cyl', 'disp', 'hp',
+                     'drat', 'wt', 'qsec', 'vs', 'am', 'gear', 'carb'",
+                     dest = "x",
+                     metavar="x variable")
+
+opt_parser <- add_option(opt_parser, c("-y", "--y-variable"), type="character",
+                     help="REQUIRED: Variable on x-axis, one of 'mpg', 'cyl', 'disp', 'hp',
+                     'drat', 'wt', 'qsec', 'vs', 'am', 'gear', 'carb'",
+                     dest = "y",
+                     metavar="y variable")
+```
+
+
+However, performing a check for meaningful inputs in the code should be done for critical options.
+
+**1. Check for non-`NULL` inputs**
+
+If an option is not provided a default value - *e.g.*, as we have done with the export format `default = "pdf"` - it is automatically set to `NULL` when adding the option to the parser. We can take advantage of this and check that the mandatory parameters are **not** `NULL`.
+
+```{r}
+#| eval: false
+
+# Access optins
+opts = parse_args(opt_parser)
+
+if (is.null(opts$x)) {
+  stop("ERROR: -x/--x-variable is required")
+}
+if (is.null(opts$y)) {
+  stop("ERROR: -y/--y-variable is required")
+}
+
+# .... Plotting code here .....
+```
+
+
+**2. Custom validation function**
+
+Alternatively, we can use a custom function to validate inputs before using them:
+
+```{r}
+#| eval: false
+
+# Create a validation function
+validate_required_args <- function(opts) {
+  required_args <- list(
+    x = "-x/--x-variable",
+    y = "-y/--y-variable"
+  )
+  
+  missing_args <- character(0)
+  for (arg_name in names(required_args)) {
+    if (is.null(opts[[arg_name]])) {
+      missing_args <- c(missing_args, required_args[[arg_name]])
+    }
+  }
+  
+  if (length(missing_args) > 0) {
+    stop("Missing required arguments: ", paste(missing_args, collapse=", "))
+  }
+}
+
+# Access options
+opts <- parse_args(opt_parser)
+# Use the validation function
+validate_required_args(opts)
+
+# .... Plotting code here .....
+```
+
+
+### Run `R` script from command line
+
+With some checks implemented, we should have a fairly robust code to share with others. Before use, help can be displayed (obviously from directory where the script is located) with
+
+```
+Rscript PlotCars.R -h
+```
+
+An example usage may look like this:
+
+```
+Rscript PlotCars.R -x "mpg" -y "wt"
+```
+
+or when using all available options like this:
+
+```
+Rscript PlotCars.R -x "mpg" -y "wt" --x-title "Miles per gallon" --y-title "Weight [lb/1000]"
+-n "mpg_vs_wt" -f "png"
+```
+
+![ggplot_output]("Blog/posts/251101-r-optparse/mpg_vs_wt.png")
