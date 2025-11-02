@@ -4,14 +4,12 @@ author: "Eva Malečková"
 date: "2025-11-02"
 date-modified: last-modified
 categories: [R]
-image: "Blog/posts/251101-r-optparse/Blog_screenshot.jpg"
+image: "Blog_screenshot.jpg"
 
 fig-width: 4
 
 echo: true
 code-overflow: wrap
-
-draft: true
 ---
 
 ## Motivation
@@ -416,4 +414,7 @@ Rscript PlotCars.R -x "mpg" -y "wt" --x-title "Miles per gallon" --y-title "Weig
 -n "mpg_vs_wt" -f "png"
 ```
 
-![ggplot_output](Blog/posts/251101-r-optparse/mpg_vs_wt.png)
+![](mpg_vs_wt.png){width=25%}
+<br>
+
+{{< fa download >}} Want to try the script out? [Download](https://github.com/emaleckova/emaleckova.github.io/blob/main/Blog/posts/251101-r-optparse/PlotCars.R) it from GitHub.
