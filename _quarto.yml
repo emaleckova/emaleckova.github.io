@@ -51,11 +51,10 @@ format:
     anchor-sections: true
     footnotes-hover: true
 
+resources: "_visuals/"
+
 # Additional features
 execute: 
   echo: false
   warning: false
   error: false
-
-# Ensure that any produced resources are available in the published version  
-post-render: "_Rscripts/CopyResources.R"
