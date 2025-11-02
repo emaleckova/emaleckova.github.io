@@ -6,7 +6,10 @@ project:
 website:
   title: "Eva Malečková"
   description: "Biologist by training (Molecular and Cell Biology) who found a way to (big) data analysis, data vizualization and Quarto which is currently my biggest passion"
+  google-analytics:
+    tracking-id: "G-XMMPEWNL7P"
   image: ""
+  
   # Navigation
   navbar:
     pinned: true
@@ -53,3 +56,6 @@ execute:
   echo: false
   warning: false
   error: false
+
+# Ensure that any produced resources are available in the published version  
+post-render: "_Rscripts/CopyResources.R"
