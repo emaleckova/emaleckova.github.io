@@ -25,26 +25,31 @@ I am a biologist by training (yes, I know how pipetting goes and what is the usu
 :::
 
 
-::: {.timeline .vertical-alt .tl-dot-center}
-::: {.event data-label="Heinrich Heine University"}
-2020
+::: {.timeline .vertical-alt .tl-dot-center .tl-spacious .tl-label-banner}
+
+::: {.event data-label="Heinrich Heine University" style="--tl-color-label: #78C2AD;"}
+**2020**
 
 *Post-doctoral researcher*
 :::
-::: {.event data-label="Singleron"}
-2021
+
+::: {.event data-label="Singleron" style="--tl-color-label: #78C2AD;"}
+**2021**
 
 *R&D Scientist*
 :::
-::: {.event data-label="Resolve BioSciences"}
-2023
+
+::: {.event data-label="Resolve BioSciences" style="--tl-color-label: #78C2AD;"}
+**2023**
 
 *Scientific Associate*
 :::
-::: {.event data-label="Resolve BioSciences"}
-2024
+
+::: {.event data-label="Resolve BioSciences" style="--tl-color-label: #78C2AD;"}
+**2024**
 
 *Scientist*
 :::
+
 :::
 
