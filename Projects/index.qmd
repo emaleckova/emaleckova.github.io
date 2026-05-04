@@ -1,21 +1,37 @@
 ---
-toc-title: "Fun projects"
+toc-title: "Projects"
 toc: true
 toc-depth: 2
 ---
 
-# {{< fa bars-progress >}} Overview of fun projects
+# {{< fa bars-progress >}} Overview of free-time projects
 
 ## Quarto
 
-- [Paris 2024 Olympics dashboard](https://emaleckova.github.io/paris-2024-medals/Dashboard_main.html)
+**Paris 2024 Olympics dashboard**  
 {{< video ../_attachments/Dashboard_sneakpeek.mp4 >}}
+- [Published](https://emaleckova.github.io/paris-2024-medals/Dashboard_main.html)
+- [Code](https://github.com/emaleckova/paris-2024-medals)
 
-- [Scrollytelling about Baron F. Trenck](https://emaleckova.quarto.pub/baron-trencks-unraveled-secrets/)
+**Scrollytelling about Baron F. Trenck**  
+A Posit contest  
+- [Published](https://emaleckova.quarto.pub/baron-trencks-unraveled-secrets/)
+- [Code](https://github.com/emaleckova/trenck-closeread)
 
 
 ## DataViz
-- {{< fa brands github >}} [`#30DayChartChallenge` contributions](https://github.com/emaleckova/30-day-challenges)
-- {{< fa brands github >}} [`#TidyTuesday` contributions](https://github.com/emaleckova/tidytuesday)
+
+**30DayChartChallenge**  
+- [Gallery](https://emaleckova.github.io/30-day-challenges/)
+- {{< fa brands github >}} [repository](https://github.com/emaleckova/30-day-challenges)
 
 
+{{< fa brands github >}} [`#TidyTuesday` contributions](https://github.com/emaleckova/tidytuesday)
+
+
+## Various
+
+**2025 Table Contest**
+A Posit contest
+- [Published](https://emaleckova.github.io/2025-Table-Contest/)
+- [Code](https://github.com/emaleckova/2025-Table-Contest)
