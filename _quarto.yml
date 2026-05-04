@@ -20,10 +20,10 @@ website:
         text: Experience
       - href: Projects/index.qmd
         text: Projects
-      - href: Blog/index.qmd
-        text: Blog
       - href: Hobbies/index.qmd
         text: Hobbies
+      - href: Blog/index.qmd
+        text: Blog
     # social media handles
     right:
       - icon: github
