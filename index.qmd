@@ -25,26 +25,26 @@ I am a biologist by training (yes, I know how pipetting goes and what is the usu
 :::
 
 
-::: {.timeline .vertical-alt .tl-dot-center .tl-pill}
+::: {.timeline .vertical-alt .tl-dot-center}
 ::: {.event data-label="Heinrich Heine University"}
 2020
+
 *Post-doctoral researcher*
-Lichen genomics: DNA isolation for whole-genome sequencing, PCR for marker development and cloning
 :::
 ::: {.event data-label="Singleron"}
 2021
+
 *R&D Scientist*
-Single cell-sequencing and multi-omics (AbSeq, CITE-seq) for human samples, developments of single-cell sequencing protocols for plant tissues
 :::
 ::: {.event data-label="Resolve BioSciences"}
 2023
+
 *Scientific Associate*
-Data analysis and reporting for internal purposes, testing and co-development of internal tools (R, python)
 :::
 ::: {.event data-label="Resolve BioSciences"}
 2024
+
 *Scientist*
-Data analysis and reporting for internal purposes, basic of image analysis
 :::
 :::
 
