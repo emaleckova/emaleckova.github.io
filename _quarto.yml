@@ -19,7 +19,7 @@ website:
       - href: Experience/index.qmd
         text: Experience
       - href: Projects/index.qmd
-        text: Fun projects
+        text: Projects
       - href: Blog/index.qmd
         text: Blog
       - href: Hobbies/index.qmd
@@ -35,7 +35,7 @@ website:
         href: "mailto:maleckova.eva@seznam.cz" 
   page-footer:
     left:  © 2024 Eva Malečková
-    right: Created with [**Quarto**](https://quarto.org/){target=_blank} and [{{< fa brands r-project title="R Project" >}}](https://www.r-project.org/about.html){target=_blank}
+    right: Created with [**Quarto**](https://quarto.org/){target=_blank} and ❤
 # Visuals
 format:
   html:
@@ -52,6 +52,9 @@ format:
     footnotes-hover: true
 
 resources: "_visuals/"
+
+filters:
+  - timeline
 
 # Additional features
 execute: 

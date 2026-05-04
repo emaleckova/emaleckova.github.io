@@ -21,15 +21,30 @@ links:
 
 **Hello and welcome!**
 
-I am a trained biologist (yes, I know how pipetting goes and what is the usual composition of a PCR  reaction) who developed an interest into genomics early on. Any kind of "-omics" goes hand in hand with big data, data analyses and visualisations. Here it was - my new passion and further career developments until my current role of a *Scientific Associate* at Resolve Biosciences (Monheim, Germany).
+I am a biologist by training (yes, I know how pipetting goes and what is the usual composition of a PCR  reaction) who developed an interest into genomics early on. Any kind of "-omics" goes hand in hand with big data, data analyses and visualisations. Here it was - my new passion and further career developments until my current role of a *Scientist* at Resolve Biosciences (Monheim, Germany).
 :::
 
-```{r}
-#| fig-width: 9
-#| fig-align: "center"
 
-source("CareerPath.R")
-
-print(p_career)
-```
+::: {.timeline .vertical-alt .tl-dot-center .tl-pill}
+::: {.event data-label="Heinrich Heine University"}
+2020
+*Post-doctoral researcher*
+Lichen genomics: DNA isolation for whole-genome sequencing, PCR for marker development and cloning
+:::
+::: {.event data-label="Singleron"}
+2021
+*R&D Scientist*
+Single cell-sequencing and multi-omics (AbSeq, CITE-seq) for human samples, developments of single-cell sequencing protocols for plant tissues
+:::
+::: {.event data-label="Resolve BioSciences"}
+2023
+*Scientific Associate*
+Data analysis and reporting for internal purposes, testing and co-development of internal tools (R, python)
+:::
+::: {.event data-label="Resolve BioSciences"}
+2024
+*Scientist*
+Data analysis and reporting for internal purposes, basic of image analysis
+:::
+:::
 
